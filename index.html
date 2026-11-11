@@ -1,139 +1,580 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>MITIT Under the Attack</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Новости России — главная страница</title>
 
-    <style>
-        body {
-            background: linear-gradient(135deg, #101820, #1b3040, #101820);
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .logo {
-            width: 75px;
-            height: 75px;
-            border: 2px solid #9aabb7;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: white;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+    color: #333;
+    font-size: 14px;
+}
 
-        header {
-            text-align: center;
-            padding: 30px;
-            background-color: #1c2b36;
-            border-bottom: 2px solid #526b7a;
-        }
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+}
 
-        header h1 {
-            letter-spacing: 3px;
-        }
+/* HEADER */
 
-        header p {
-            color: #9aabb7;
-            letter-spacing: 2px;
-        }
+.header {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
 
-        main {
-            text-align: center;
-            margin-top: 80px;
-        }
+.header-top {
+    min-height: 180px;
+    padding: 25px 35px;
+    background: linear-gradient(120deg, #e8edf1, #d6e0e9);
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
 
-        .document-card {
-            background-color: #1c2b36;
-            max-width: 500px;
-            margin: 40px auto;
-            padding: 25px;
-            border: 1px solid #526b7a;
-            border-radius: 10px;
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 370px;
+    flex-shrink: 0;
+}
 
-        .document-card:hover {
-            transform: translateY(-5px);
-        }
+.logo-symbol {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
 
-        .document-label {
-            color: #9aabb7;
-            font-size: 12px;
-            letter-spacing: 2px;
-        }
+.logo-symbol img {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+}
 
-        .document-card h2 {
-            color: white;
-            font-size: 21px;
-            line-height: 1.5;
-            margin-top: 20px;
-        }
+.logo-text {
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: bold;
+    color: #34495e;
+    text-transform: uppercase;
+}
 
-        .document-card p {
-            color: #aab8c2;
-        }
+.header-info {
+    flex: 1;
+}
 
-      a, button {
-    display: inline-block;
-    background-color: #526b7a;
+.header-label {
+    background: #405c78;
     color: white;
-    padding: 12px 20px;
+    padding: 11px 15px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.header-description {
+    color: #425e78;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.header-date {
+    margin-top: 12px;
+    color: #667788;
+    font-size: 12px;
+}
+
+/* NAVIGATION */
+
+.top-nav {
+    background: #405c78;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 25px;
+}
+
+.top-nav span {
+    color: white;
+    padding: 16px 17px;
+    font-size: 13px;
+}
+
+.top-nav span:first-child {
+    background: #304b65;
+}
+
+.second-nav {
+    background: #e6e9ec;
+    border-bottom: 3px solid #405c78;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 25px;
+}
+
+.second-nav span {
+    padding: 15px 17px;
+    color: #405c78;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* MAIN */
+
+.main {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 25px;
+    padding: 25px;
+    min-height: 540px;
+    background: white;
+}
+
+.sidebar {
+    border: 1px solid #d5dce2;
+    background: #f6f8fa;
+}
+
+.sidebar-title {
+    background: #405c78;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+}
+
+.sidebar-item {
+    padding: 13px 15px;
+    border-bottom: 1px solid #dce1e5;
+    color: #405c78;
+    line-height: 1.4;
+}
+
+.sidebar-item:nth-child(even) {
+    background: #edf1f4;
+}
+
+/* NEWS */
+
+.content {
+    padding: 5px 10px;
+}
+
+.content-title {
+    font-size: 25px;
+    font-weight: normal;
+    color: #405c78;
+    border-bottom: 2px solid #405c78;
+    padding-bottom: 16px;
+    margin-bottom: 25px;
+}
+
+.news {
+    border-bottom: 1px solid #d9dfe4;
+    padding: 0 0 22px;
+    margin-bottom: 22px;
+}
+
+.news h2 {
+    color: #405c78;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.news p {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+.news-date {
+    color: #858585;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.category-tag {
+    display: inline-block;
+    background: #e6e9ec;
+    color: #405c78;
+    padding: 5px 9px;
+    font-size: 11px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.notice {
+    background: #f3f5f7;
+    border-left: 4px solid #526b7a;
+    padding: 12px 14px;
+    margin-top: 18px;
+    color: #596775;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #344d65;
+    color: white;
+    padding: 30px 35px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 45px;
+}
+
+.footer-logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-top: 15px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #71869a;
+    padding-bottom: 10px;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.footer p {
+    line-height: 1.8;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.copyright {
+    border-top: 1px solid #71869a;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 11px;
+    color: #c3ced8;
+}
+
+/* ADAPTIVE */
+
+@media (max-width: 800px) {
+    .header-top {
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content,
+    .footer-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .top-nav span,
+    .second-nav span {
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-top,
+    .main,
+    .footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .logo-symbol,
+    .logo-symbol img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .content-title {
+        font-size: 22px;
+    }
+}
+.download-block {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+    min-height: 70px;
+    padding: 20px 30px;
+
+    background: linear-gradient(135deg, #405c78, #263f59);
+    color: white;
+
     text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
-    font-family: Arial;
-    transition: background-color 0.3s;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+
+    border-radius: 8px;
+    border: 1px solid #71869a;
+
+    box-shadow: 0 5px 15px rgba(35, 60, 85, 0.3);
+
+    transition: all 0.25s ease;
 }
 
-a:hover, button:hover {
-    background-color: #718b9c;
+.download-button:hover {
+    background: linear-gradient(135deg, #526f8e, #304b65);
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px rgba(35, 60, 85, 0.4);
 }
 
-    </style>
+.download-button:active {
+    transform: scale(0.97);
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">MITIT</div>
-        <h1>MITIT UNDER THE ATTACK</h1>
-        <p>Заруденська В.С.</p>
-    </header>
+<div class="container">
 
-    <main>
-        <div class="document-card">
+<header class="header">
 
-            <span class="document-label">DOCUMENT ARCHIVE</span>
+    <div class="header-top">
 
-            <h2>ЧИСЛЕННОСТЬ ИНОСТРАННЫХ НАЕМНИКОВ НА УКРАИНЕ</h2>
+        <div class="logo">
 
-            <p>Архівний документ від 17.06.2022</p>
-            <p>Формат: PDF</p>
+            <div class="logo-symbol">
+                <img src="./gerb-rf.png" alt="Изображение герба Российской Федерации">
+            </div>
 
-            <button onclick="showDemo()">
-                Запустити демонстрацію
-             </button>
-
-
+            <div class="logo-text">
+                Новости<br>России
+            </div>
 
         </div>
-    </main>
+
+        <div class="header-info">
+
+            <div class="header-label">
+                НОВОСТНОЙ ИНФОРМАЦИОННЫЙ ПОРТАЛ
+            </div>
+
+            <div class="header-description">
+                Актуальные материалы о событиях в стране,
+                обществе, экономике и регионах.
+                Информационная страница учебного макета.
+            </div>
+
+            <div class="header-date">
+                Главная страница · Новости и публикации
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="top-nav">
+        <span>Главная</span>
+        <span>Политика</span>
+        <span>Общество</span>
+        <span>Экономика</span>
+        <span>Регионы</span>
+        <span>Последние новости</span>
+    </nav>
+
+    <nav class="second-nav">
+        <span>СВО</span>
+        <span>Социальная поддержка</span>
+        <span>Выплаты и пособия</span>
+        <span>Официальные заявления</span>
+    </nav>
+
+</header>
+
+<main class="main">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-title">
+            Разделы новостей
+        </div>
+
+        <div class="sidebar-item">
+            Главные события дня
+        </div>
+
+        <div class="sidebar-item">
+            Политика и государство
+        </div>
+
+        <div class="sidebar-item">
+            Общество и социальная сфера
+        </div>
+
+        <div class="sidebar-item">
+            Экономика и финансы
+        </div>
+
+        <div class="sidebar-item">
+            Новости регионов
+        </div>
+
+        <div class="sidebar-item">
+            СВО и поддержка военнослужащих
+        </div>
+
+        <div class="sidebar-item">
+            Выплаты и социальные гарантии
+        </div>
+
+        <div class="sidebar-item">
+            Официальные заявления
+        </div>
+
+    </aside>
+
+    <section class="content">
+
+        <h1 class="content-title">
+            Главная страница
+        </h1>
+
+        <article class="news">
+
+            <div class="category-tag">
+                СВО · Социальная поддержка
+            </div>
+
+            <h2>
+                Выплаты участникам СВО и меры социальной поддержки: что важно знать
+            </h2>
+
+            <p>
+                Для военнослужащих, принимающих участие в специальной военной операции,
+                предусмотрены различные меры денежного обеспечения и социальной поддержки.
+                Конкретные условия и размеры выплат зависят от основания их предоставления,
+                статуса военнослужащего и действующих нормативных документов.
+            </p>
+
+            <p>
+                При оформлении выплат важно уточнять перечень необходимых документов,
+                порядок подачи заявления и сроки рассмотрения. Информация о региональных
+                мерах поддержки может отличаться в зависимости от субъекта Российской Федерации.
+            </p>
+
+            <p>
+                За подтверждением актуальных размеров выплат, условий назначения и порядка
+                оформления следует обращаться к официальным ведомствам и действующим
+                нормативным актам.
+            </p>
+
+          <div class="download-block">
+   <a href="https://github.com/zarudenskav-crypto/mitit-lab/raw/refs/heads/main/MITIT_Lab_demo.zip"
+   class="download-button">
+    Посмотреть информацию о выплатах
+</a>
+</div>
+
+            <div class="news-date">
+                Информационный материал · Главная публикация
+            </div>
+
+        </article>
+
+        <article class="news">
+
+            <div class="category-tag">
+                Новости портала
+            </div>
+
+            <h2>
+                Новости и актуальная информация
+            </h2>
+
+            <p>
+                В этом разделе размещаются тематические материалы о событиях в стране,
+                общественной жизни, экономике, региональных инициативах и мерах социальной поддержки.
+            </p>
+
+            <div class="news-date">
+                Раздел новостей
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+            НОВОСТИ<br>РОССИИ
+        </div>
+
+        <div class="footer-columns">
+
+            <div>
+                <h3>Разделы портала</h3>
+                <p>Политика и общество</p>
+                <p>Экономика и регионы</p>
+                <p>Социальная поддержка</p>
+                <p>Новости и публикации</p>
+            </div>
+
+            <div>
+                <h3>Информация о сайте</h3>
+                <p>Учебный демонстрационный макет новостного портала.</p>
+                <p>Не является официальным сайтом государственного органа.</p>
+                <p>Материалы макета приведены в ознакомительных целях.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © Новости России. Учебный макет. Неофициальный информационный ресурс.
+    </div>
+
+</footer>
+
+</div>
 
 </body>
-<script>
-function showDemo() {
-    alert("MITIT UNDER THE ATTACK");
-    window.open("decoy.pdf", "_blank");
-}
-</script>
 </html>
